@@ -1,6 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Slain.io",
+  "short_name": "Slain.io",
+  "display": "fullscreen",
+  "orientation": "landscape-primary",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +20,6 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#181818",
+  "background_color": "#181818"
 }

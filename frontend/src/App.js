@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
-import MainMenu from './MainMenu';
+import MainMenu from './MenuContainer/MainMenu';
+
 const App = () => {
     return (
         <>

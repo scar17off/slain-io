@@ -1,0 +1,107 @@
+{
+    "1": {
+        "enemies": [
+            {
+                "type": "RedSlasher",
+                "amount": 10
+            },
+            {
+                "type": "RedCrasher",
+                "amount": 5
+            }
+        ],
+        "color": [
+            196,
+            246,
+            220
+        ]
+    },
+    "2": {
+        "enemies": [
+            {
+                "type": "RedSlasher",
+                "amount": 10
+            },
+            {
+                "type": "RedCrasher",
+                "amount": 5
+            },
+            {
+                "type": "RedCentipede",
+                "amount": 3
+            }
+        ],
+        "color": [
+            246,
+            237,
+            237
+        ]
+    },
+    "3": {
+        "enemies": [
+            {
+                "type": "RedSlasher",
+                "amount": 10
+            },
+            {
+                "type": "RedCrasher",
+                "amount": 5
+            },
+            {
+                "type": "RedCentipede",
+                "amount": 3
+            },
+            {
+                "type": "BlueSlasher",
+                "amount": 10
+            },
+            {
+                "type": "BlueCrasher",
+                "amount": 5
+            }
+        ],
+        "color": [
+            210,
+            223,
+            246
+        ]
+    },
+    "4": {
+        "enemies": [
+            {
+                "type": "BlueSlasher",
+                "amount": 10
+            },
+            {
+                "type": "BlueCrasher",
+                "amount": 5
+            },
+            {
+                "type": "BlueCentipede",
+                "amount": 3
+            }
+        ],
+        "color": [
+            183,
+            205,
+            246
+        ]
+    },
+    "5": {
+        "enemies": [
+            {
+                "type": "PurpleSlasher",
+                "amount": 10
+            },
+            {
+                "type": "PurpleCrasher",
+                "amount": 5
+            }
+        ],
+        "color": [
+            234,
+            221,
+            246
+        ]
+    }
+}
