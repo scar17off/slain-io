@@ -1,13 +1,25 @@
+const RedSlasher = require('./RedSlasher');
+const RedCrasher = require('./RedCrasher.js');
+const RedCentipede = require('./RedCentipede.js');
+
+const BlueSlasher = require('./BlueSlasher.js');
+const BlueCrasher = require('./BlueCrasher.js'); 
+const BlueCentipede = require('./BlueCentipede.js');
+
+const PurpleSlasher = require('./PurpleSlasher.js');
+const PurpleCrasher = require('./PurpleCrasher.js');
+const PurpleCentipede = require('./PurpleCentipede.js');
+
 module.exports = {
-    RedSlasher: require('./RedSlasher.js'),
-    RedCrasher: require('./RedCrasher.js'),
-    RedCentipede: require('./RedCentipede.js'),
+    RedSlasher,
+    RedCrasher,
+    RedCentipede,
 
-    BlueSlasher: require('./BlueSlasher.js'),
-    BlueCrasher: require('./BlueCrasher.js'),
-    BlueCentipede: require('./BlueCentipede.js'),
-
-    PurpleSlasher: require('./PurpleSlasher.js'),
-    PurpleCrasher: require('./PurpleCrasher.js'),
-    PurpleCentipede: require('./PurpleCentipede.js'),
+    BlueSlasher,
+    BlueCrasher,
+    BlueCentipede,
+    
+    PurpleSlasher,
+    PurpleCrasher,
+    PurpleCentipede
 }

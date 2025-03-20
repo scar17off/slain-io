@@ -5,15 +5,25 @@ class Area {
     constructor(data) {
         this.id = null;
         this.size = null;
-        this.players = [];
-        this.enemies = [];
-        this.pellets = [];
+        this.players = new Map();
+        this.enemies = new Map();
+        this.pellets = new Map();
         this.data = data;
+        this.color = data.color || [221, 194, 246]; // Light purple for 8+ areas
     }
 
     tick() {
+        // Update all entities with area data
         this.enemies.forEach(enemy => {
-            enemy.tick();
+            enemy.tick(this);
+        });
+
+        this.players.forEach(player => {
+            player.tick(this);
+        });
+
+        this.pellets.forEach(pellet => {
+            pellet.tick(this);
         });
     }
 
@@ -25,8 +35,8 @@ class Area {
     }
 
     reset() {
-        this.enemies = [];
-        this.pellets = [];
+        this.enemies = new Map();
+        this.pellets = new Map();
 
         // Spawn enemies
         for (let i = 0; i < this.data.enemies.length; i++) {
@@ -34,29 +44,32 @@ class Area {
             const spawnPoint = this.getRandomSpawnPoint(enemy.getRadius());
             enemy.x = spawnPoint.x;
             enemy.y = spawnPoint.y;
-            this.enemies.push(enemy);
+            this.enemies.set(enemy.id, enemy);
         }
 
         // Spawn pellets
-        const numPellets = 100;
+        const numPellets = 20;
         for (let i = 0; i < numPellets; i++) {
             const pellet = new Pellet();
-            const spawnPoint = this.getRandomSpawnPoint(32);
+            const spawnPoint = this.getRandomSpawnPoint(pellet.radius);
             pellet.x = spawnPoint.x;
             pellet.y = spawnPoint.y;
-            this.pellets.push(pellet);
+            this.pellets.set(pellet.id, pellet);
         }
     }
 
     addPlayer(player) {
-        this.players.push(player);
-        const spawnPoint = this.getRandomSpawnPoint(player);
+        player.area = this;
+        // Get random spawn position
+        const spawnPoint = this.getRandomSpawnPoint(24);
         player.x = spawnPoint.x;
         player.y = spawnPoint.y;
+        this.players.set(player.id, player);
     }
 
     removePlayer(player) {
-        this.players = this.players.filter(p => p !== player);
+        this.players.delete(player.id);
+        player.area = null;
     }
 }
 

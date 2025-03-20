@@ -1,0 +1,175 @@
+.upgradesMenu {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 220px;
+    min-height: 258px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 12px;
+    padding: 7px 0 10px;
+    border-radius: 8px;
+    color: white;
+    font-family: Arial, sans-serif;
+    user-select: none;
+    & * { /* Apply to all children */
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+}
+
+.playerName {
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.availablePoints {
+    text-align: center;
+    color: #ffd700;
+    font-size: 12px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+}
+
+.category {
+    margin: 5px 0;
+}
+
+.categoryTitle {
+    text-align: center;
+    font-size: 12px;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 5px 0;
+}
+
+.statsContainer {
+    padding: 5px 0;
+}
+
+.statRow {
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    transition: background-color 0.2s;
+}
+
+.statRow:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.statName {
+    display: inline-block;
+    width: 125px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.statValue {
+    display: inline-block;
+    position: absolute;
+    left: 145px;
+    color: #b4ffb4;
+    min-width: 40px;
+}
+
+.upgradeButton {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: -1px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    animation: stats-upgrade-animation 1s infinite;
+}
+
+.statRow:hover .upgradeButton {
+    display: block;
+}
+
+@keyframes stats-upgrade-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Skill info panel styles */
+.skillInfo {
+    position: fixed;
+    left: 10px;
+    bottom: calc(10px + 258px + 10px);
+    width: 220px;
+    height: 86px;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 7px 0 7px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 12px;
+    color: white;
+    z-index: 1000;
+    pointer-events: none;
+    & * {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+}
+
+.skillInfoName {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 10px;
+    color: white;
+}
+
+.skillInfo hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 5px 0;
+}
+
+.skillInfoItem {
+    position: relative;
+    font-weight: bold;
+    padding: 0 10px;
+    color: white;
+}
+
+.skillInfoRight {
+    display: inline-block;
+    position: absolute;
+    left: 80px;
+    top: 0;
+}
+
+.skillInfoAmount {
+    font-weight: normal;
+    color: #ffd2d2;
+}
+
+.skillInfoValue {
+    font-weight: normal;
+    color: #b4ffb4;
+}
+
+/* Mixin-like class for text shadow (stolen from slain.io) */
+.textShadow {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
