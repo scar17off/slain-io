@@ -6,12 +6,16 @@ class RedCrasher extends Entity {
         this.isCrasher = true;
         this.color = [220, 0, 0];
         this.angle = 0;
-        this.spinSpeed = 0.02;
+        this.spinSpeed = 0.05;
         this.spikes = 15;
     }
 
     tick(area) {
-        this.angle = (this.angle + this.spinSpeed) % (Math.PI * 2);
+        this.angle = parseFloat(((this.angle + this.spinSpeed) % (Math.PI * 2)).toFixed(2));
+    }
+
+    getRadius() {
+        return 36 + this.spikes * 0.5;
     }
 
     getClientData() {

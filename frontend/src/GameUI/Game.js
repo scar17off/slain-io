@@ -143,19 +143,11 @@ const Game = ({ playerName }) => {
         enemies.forEach(enemy => {
             if (isInView(enemy.x, enemy.y, enemy.radius)) {
                 if (enemy.isCrasher) {
-                    // Debug log
-                    console.log('Rendering crasher:', {
-                        isCrasher: enemy.isCrasher,
-                        spikes: enemy.spikes,
-                        angle: enemy.angle,
-                        radius: enemy.radius
-                    });
-                    
                     // Render Crasher (saw-like enemy)
                     const spikes = enemy.spikes || 15;
                     const angle = enemy.angle || 0;
-                    const outerRadius = enemy.radius; // Make spikes extend beyond body
-                    const innerRadius = enemy.radius * 0.75;
+                    const outerRadius = enemy.radius;
+                    const innerRadius = enemy.radius * 0.75; // -5 // Move inner radius 5px closer to the center
                     
                     // Draw spikes first (gray saw blade)
                     for (let i = 0; i < spikes; i++) {
@@ -191,7 +183,7 @@ const Game = ({ playerName }) => {
                     game.shapeRenderer.circle(
                         enemy.x,
                         enemy.y,
-                        innerRadius * armorRatio,
+                        innerRadius * armorRatio + 5,
                         enemy.color || [255, 0, 0],
                         1.0
                     );
