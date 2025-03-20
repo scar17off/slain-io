@@ -1,5 +1,6 @@
 const enemies = require('../enemies/Enemies');
 const Pellet = require('./Pellet');
+const tiers = require('../tiers.json');
 
 class Area {
     constructor(data) {
@@ -43,6 +44,22 @@ class Area {
             const enemyType = this.data.enemies[i];
             for (let j = 0; j < enemyType.amount; j++) {
                 const enemy = new enemies[enemyType.type]();
+                
+                // Apply tier stats and color
+                const tierData = tiers[enemyType.tier];
+                if (tierData) {
+                    const enemyStats = tierData.stats[enemyType.type];
+                    if (enemyStats) {
+                        // Merge tier stats with existing stats
+                        Object.keys(enemyStats).forEach(statKey => {
+                            if (enemy.stats[statKey]) {
+                                enemy.stats[statKey].value = enemyStats[statKey].value;
+                            }
+                        });
+                    }
+                    enemy.color = tierData.color; // Set color from tier
+                }
+
                 const spawnPoint = this.getRandomSpawnPoint(enemy.getRadius());
                 enemy.x = spawnPoint.x;
                 enemy.y = spawnPoint.y;

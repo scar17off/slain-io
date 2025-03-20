@@ -12,6 +12,7 @@ import ExperienceBar from './ExperienceBar';
 const FPS = 40;
 const RENDER_INTERVAL = 1000 / FPS;
 
+const ARMOR_COLOR = [64, 64, 64];
 const FIST_COLOR = [64, 64, 64];
 
 const Game = ({ playerName }) => {
@@ -180,7 +181,7 @@ const Game = ({ playerName }) => {
                                     y: enemy.y + Math.sin(nextSpikeAngle) * innerRadius
                                 }
                             ],
-                            [64, 64, 64],  // Gray color for saw blade
+                            ARMOR_COLOR,  // Gray color for saw blade
                             1.0
                         );
                     }
@@ -201,7 +202,7 @@ const Game = ({ playerName }) => {
                         enemy.x,
                         enemy.y,
                         enemy.radius,
-                        [64, 64, 64], // Armor color
+                        ARMOR_COLOR, // Armor color
                         1.0
                     );
 
@@ -226,7 +227,7 @@ const Game = ({ playerName }) => {
                         enemy.y + Math.sin(angle - Math.PI/2) * (bodyRadius + triangleSize),
                         triangleSize,
                         angle,
-                        [64, 64, 64],
+                        ARMOR_COLOR,
                         1.0
                     );
 
@@ -236,7 +237,7 @@ const Game = ({ playerName }) => {
                         enemy.y + Math.sin(angle + Math.PI/2) * (bodyRadius + triangleSize),
                         triangleSize,
                         angle,
-                        [64, 64, 64],
+                        ARMOR_COLOR,
                         1.0
                     );
                 }
@@ -251,7 +252,7 @@ const Game = ({ playerName }) => {
                     player.x,
                     player.y,
                     player.radius,
-                    [64, 64, 64], // Armor color
+                    ARMOR_COLOR, // Armor color
                     1.0
                 );
 
@@ -261,7 +262,7 @@ const Game = ({ playerName }) => {
                     player.x,
                     player.y,
                     player.radius * armorRatio,
-                    [150, 150, 150], // Body color
+                    player.color, // Body color
                     1.0
                 );
 

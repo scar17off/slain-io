@@ -2,12 +2,14 @@
     "1": {
         "enemies": [
             {
-                "type": "RedSlasher",
-                "amount": 10
+                "type": "Slasher",
+                "amount": 10,
+                "tier": 1
             },
             {
-                "type": "RedCrasher",
-                "amount": 5
+                "type": "Crasher",
+                "amount": 5,
+                "tier": 1
             }
         ],
         "color": [
@@ -19,16 +21,19 @@
     "2": {
         "enemies": [
             {
-                "type": "RedSlasher",
-                "amount": 10
+                "type": "Slasher",
+                "amount": 15,
+                "tier": 1
             },
             {
-                "type": "RedCrasher",
-                "amount": 5
+                "type": "Crasher",
+                "amount": 8,
+                "tier": 1
             },
             {
-                "type": "RedCentipede",
-                "amount": 3
+                "type": "Centipede",
+                "amount": 3,
+                "tier": 1
             }
         ],
         "color": [
@@ -40,24 +45,29 @@
     "3": {
         "enemies": [
             {
-                "type": "RedSlasher",
-                "amount": 10
+                "type": "Slasher",
+                "amount": 20,
+                "tier": 1
             },
             {
-                "type": "RedCrasher",
-                "amount": 5
+                "type": "Crasher",
+                "amount": 10,
+                "tier": 2
             },
             {
-                "type": "RedCentipede",
-                "amount": 3
+                "type": "Centipede",
+                "amount": 1,
+                "tier": 1
             },
             {
-                "type": "BlueSlasher",
-                "amount": 10
+                "type": "Slasher",
+                "amount": 10,
+                "tier": 2
             },
             {
-                "type": "BlueCrasher",
-                "amount": 5
+                "type": "Crasher",
+                "amount": 5,
+                "tier": 2
             }
         ],
         "color": [
@@ -69,16 +79,19 @@
     "4": {
         "enemies": [
             {
-                "type": "BlueSlasher",
-                "amount": 10
+                "type": "Slasher",
+                "amount": 10,
+                "tier": 2
             },
             {
-                "type": "BlueCrasher",
-                "amount": 5
+                "type": "Crasher",
+                "amount": 5,
+                "tier": 2
             },
             {
-                "type": "BlueCentipede",
-                "amount": 3
+                "type": "Centipede",
+                "amount": 3,
+                "tier": 2
             }
         ],
         "color": [
@@ -90,12 +103,14 @@
     "5": {
         "enemies": [
             {
-                "type": "PurpleSlasher",
-                "amount": 10
+                "type": "Slasher",
+                "amount": 10,
+                "tier": 3
             },
             {
-                "type": "PurpleCrasher",
-                "amount": 5
+                "type": "Crasher",
+                "amount": 5,
+                "tier": 3
             }
         ],
         "color": [
@@ -107,8 +122,19 @@
     "6": {
         "enemies": [
             {
-                "type": "PurpleSlasher",
-                "amount": 10
+                "type": "Slasher",
+                "amount": 10,
+                "tier": 3
+            },
+            {
+                "type": "Crasher",
+                "amount": 5,
+                "tier": 3
+            },
+            {
+                "type": "Centipede",
+                "amount": 1,
+                "tier": 3
             }
         ],
         "color": [

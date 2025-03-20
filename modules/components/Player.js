@@ -123,7 +123,7 @@ class Player extends Entity {
         return {
             ...super.getClientData(),
             isPlayer: true,
-            color: [153, 153, 153],
+            color: this.color,
             level: this.level,
             experience: this.experience,
             maxExperience: this.maxExperience

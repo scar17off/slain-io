@@ -5,17 +5,14 @@ class RedSlasher extends Entity {
         super();
         this.color = [220, 0, 0];
         this.isSlasher = true;
-        this.stats = {
-            maxHealth: { value: 100, level: 0, maxLevel: 1 },
-            armor: { value: 0.3, level: 0, maxLevel: 1 }, // 30% armor
-            attackDamage: { value: 25, level: 0, maxLevel: 1 },
-            movementSpeed: { value: 0.03, level: 0, maxLevel: 1 }
-        };
-        this.health = this.stats.maxHealth.value;
     }
 
     tick(area) {
         // AI behavior will be implemented later
+    }
+
+    respawn() {
+        // TODO: Implement respawn logic
     }
 
     getClientData() {
@@ -24,10 +21,6 @@ class RedSlasher extends Entity {
             isSlasher: true,
             color: this.color
         };
-    }
-
-    respawn() {
-        // TODO: Implement respawn logic
     }
 }
 

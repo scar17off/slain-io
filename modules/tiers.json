@@ -1,0 +1,81 @@
+{
+    "1": {
+        "color": [
+            220,
+            0,
+            0
+        ],
+        "stats": {
+            "Slasher": {
+                "armor": {
+                    "value": 0.5
+                },
+                "attackSpeed": {
+                    "value": 0.67
+                }
+            },
+            "Crasher": {
+                "armor": {
+                    "value": 0.15
+                },
+                "attackSpeed": {
+                    "value": 0.333
+                }
+            }
+        }
+    },
+    "2": {
+        "color": [
+            255,
+            30,
+            30
+        ],
+        "stats": {
+            "Slasher": {
+                "armor": {
+                    "value": 0.5
+                },
+                "attackSpeed": {
+                    "value": 0.333
+                }
+            },
+            "Crasher": {
+                "armor": {
+                    "value": 0.3
+                },
+                "attackSpeed": {
+                    "value": 0.333
+                }
+            }
+        }
+    },
+    "3": {
+        "color": [
+            255,
+            0,
+            0
+        ],
+        "stats": {
+            "Slasher": {
+                "armor": {
+                    "value": 0.5
+                },
+                "attackSpeed": {
+                    "value": 1.0
+                }
+            },
+            "Crasher": {
+                "armor": {
+                    "value": 0.5,
+                    "level": 0,
+                    "maxLevel": 1
+                },
+                "attackSpeed": {
+                    "value": 0.333,
+                    "level": 0,
+                    "maxLevel": 1
+                }
+            }
+        }
+    }
+}

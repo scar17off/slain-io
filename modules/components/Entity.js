@@ -5,6 +5,7 @@ class Entity {
         this.area = null;
         this.x = 0;
         this.y = 0;
+        this.color = [150, 150, 150];
         this.angle = 0;
         this.isSlasher = false;
         this.isCrasher = false;
