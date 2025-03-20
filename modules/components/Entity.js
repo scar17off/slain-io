@@ -5,6 +5,10 @@ class Entity {
         this.area = null;
         this.x = 0;
         this.y = 0;
+        this.angle = 0;
+        this.isSlasher = false;
+        this.isCrasher = false;
+        this.spikes = 0;
 
         // Define stat configurations
         this.stats = {
@@ -141,9 +145,11 @@ class Entity {
             radius: this.getRadius(),
             health: this.health,
             stats: this.stats,
-            name: this.name,
             angle: this.angle,
-            blocking: this.blocking
+            isSlasher: this.isSlasher,
+            isCrasher: this.isCrasher,
+            spikes: this.spikes,
+            color: this.color
         };
     }
 }

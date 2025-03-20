@@ -4,6 +4,7 @@ class RedSlasher extends Entity {
     constructor() {
         super();
         this.color = [220, 0, 0];
+        this.isSlasher = true;
         this.stats = {
             maxHealth: { value: 100, level: 0, maxLevel: 1 },
             armor: { value: 0.3, level: 0, maxLevel: 1 }, // 30% armor

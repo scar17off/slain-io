@@ -141,27 +141,81 @@ const Game = ({ playerName }) => {
         // Render enemies
         enemies.forEach(enemy => {
             if (isInView(enemy.x, enemy.y, enemy.radius)) {
-                // First render armor circle (outer circle)
-                game.shapeRenderer.circle(
-                    enemy.x,
-                    enemy.y,
-                    enemy.radius,
-                    [64, 64, 64], // Armor color
-                    1.0
-                );
+                if (enemy.isCrasher) {
+                    // Debug log
+                    console.log('Rendering crasher:', {
+                        isCrasher: enemy.isCrasher,
+                        spikes: enemy.spikes,
+                        angle: enemy.angle,
+                        radius: enemy.radius
+                    });
+                    
+                    // Render Crasher (saw-like enemy)
+                    const spikes = enemy.spikes || 15;
+                    const angle = enemy.angle || 0;
+                    const outerRadius = enemy.radius; // Make spikes extend beyond body
+                    const innerRadius = enemy.radius * 0.75;
+                    
+                    // Draw spikes first (gray saw blade)
+                    for (let i = 0; i < spikes; i++) {
+                        const spikeAngle = angle + (i * Math.PI * 2 / spikes);
+                        const nextSpikeAngle = angle + ((i + 1) * Math.PI * 2 / spikes);
+                        
+                        // Draw spike triangle
+                        game.shapeRenderer.path(
+                            [
+                                // Inner point
+                                {
+                                    x: enemy.x + Math.cos(spikeAngle) * innerRadius,
+                                    y: enemy.y + Math.sin(spikeAngle) * innerRadius
+                                },
+                                // Outer point
+                                {
+                                    x: enemy.x + Math.cos(spikeAngle + Math.PI/spikes) * outerRadius,
+                                    y: enemy.y + Math.sin(spikeAngle + Math.PI/spikes) * outerRadius
+                                },
+                                // Next inner point
+                                {
+                                    x: enemy.x + Math.cos(nextSpikeAngle) * innerRadius,
+                                    y: enemy.y + Math.sin(nextSpikeAngle) * innerRadius
+                                }
+                            ],
+                            [64, 64, 64],  // Gray color for saw blade
+                            1.0
+                        );
+                    }
 
-                // Then render main body (inner circle)
-                const armorRatio = Math.max(0.2, 1 - enemy.stats.armor.value);
-                game.shapeRenderer.circle(
-                    enemy.x,
-                    enemy.y,
-                    enemy.radius * armorRatio,
-                    enemy.color || [255, 255, 255],
-                    1.0
-                );
+                    // Then render the inner red body
+                    const armorRatio = Math.max(0.2, 1 - (enemy.stats?.armor?.value || 0));
+                    game.shapeRenderer.circle(
+                        enemy.x,
+                        enemy.y,
+                        innerRadius * armorRatio,
+                        enemy.color || [255, 0, 0],
+                        1.0
+                    );
+                } else if (enemy.isSlasher) {
+                    // Render Slasher (original enemy type)
+                    // First render armor circle (outer circle)
+                    game.shapeRenderer.circle(
+                        enemy.x,
+                        enemy.y,
+                        enemy.radius,
+                        [64, 64, 64], // Armor color
+                        1.0
+                    );
 
-                // For Slashers, render triangular "fists"
-                if (enemy.isSlasher) {
+                    // Then render main body (inner circle)
+                    const armorRatio = Math.max(0.2, 1 - enemy.stats.armor.value);
+                    game.shapeRenderer.circle(
+                        enemy.x,
+                        enemy.y,
+                        enemy.radius * armorRatio,
+                        enemy.color || [255, 0, 0], // Fallback to red if no color
+                        1.0
+                    );
+
+                    // Render triangular "fists"
                     const angle = enemy.angle || 0;
                     const triangleSize = enemy.stats.attackDamage.value;
                     const bodyRadius = enemy.radius;
@@ -172,7 +226,7 @@ const Game = ({ playerName }) => {
                         enemy.y + Math.sin(angle - Math.PI/2) * (bodyRadius + triangleSize),
                         triangleSize,
                         angle,
-                        [64, 64, 64],  // Changed to match fist color
+                        [64, 64, 64],
                         1.0
                     );
 
@@ -182,7 +236,7 @@ const Game = ({ playerName }) => {
                         enemy.y + Math.sin(angle + Math.PI/2) * (bodyRadius + triangleSize),
                         triangleSize,
                         angle,
-                        [64, 64, 64],  // Changed to match fist color
+                        [64, 64, 64],
                         1.0
                     );
                 }

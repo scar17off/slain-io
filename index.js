@@ -63,7 +63,17 @@ setInterval(() => {
             // Broadcast state to all clients in this area
             const areaState = {
                 players: Array.from(area.players.values()).map(player => player.getClientData()),
-                enemies: Array.from(area.enemies.values()).map(enemy => enemy.getClientData()),
+                enemies: Array.from(area.enemies.values()).map(enemy => {
+                    const data = enemy.getClientData();
+                    // Ensure all required properties are present
+                    return {
+                        ...data,
+                        isCrasher: enemy.isCrasher,
+                        isSlasher: enemy.isSlasher,
+                        spikes: enemy.spikes,
+                        angle: enemy.angle
+                    };
+                }),
                 pellets: Array.from(area.pellets.values()).map(pellet => pellet.getClientData())
             };
 
@@ -97,20 +107,6 @@ io.on('connection', (socket) => {
         width: areaObjects[0].width,
         height: areaObjects[0].height,
         gridSize: areaObjects[0].gridSize
-    });
-
-    console.log('New player joined area:', {
-        areaId: 0,
-        playerName: playerName,
-        dimensions: {
-            width: areaObjects[0].width,
-            height: areaObjects[0].height,
-            gridSize: areaObjects[0].gridSize
-        },
-        playerPos: {
-            x: player.x,
-            y: player.y
-        }
     });
 
     socket.on('disconnect', () => {

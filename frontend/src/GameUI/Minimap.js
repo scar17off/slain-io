@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './Minimap.module.css';
 
-const MINIMAP_SIZE = 150;
-const PLAYER_DOT_SIZE = 3;
+const MINIMAP_SIZE = 100;
+const PLAYER_DOT_SIZE = 2;
 const PELLET_DOT_SIZE = 2;
 const VIEW_RADIUS = 500; // Visible radius around player
 

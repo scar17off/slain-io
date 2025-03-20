@@ -40,11 +40,14 @@ class Area {
 
         // Spawn enemies
         for (let i = 0; i < this.data.enemies.length; i++) {
-            const enemy = new enemies[this.data.enemies[i].type]();
-            const spawnPoint = this.getRandomSpawnPoint(enemy.getRadius());
-            enemy.x = spawnPoint.x;
-            enemy.y = spawnPoint.y;
-            this.enemies.set(enemy.id, enemy);
+            const enemyType = this.data.enemies[i];
+            for (let j = 0; j < enemyType.amount; j++) {
+                const enemy = new enemies[enemyType.type]();
+                const spawnPoint = this.getRandomSpawnPoint(enemy.getRadius());
+                enemy.x = spawnPoint.x;
+                enemy.y = spawnPoint.y;
+                this.enemies.set(enemy.id, enemy);
+            }
         }
 
         // Spawn pellets
