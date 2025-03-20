@@ -4,8 +4,128 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../public/img/background.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../public/img/background.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuContainer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 260px;
+    box-sizing: border-box;
+}
+
+.title {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.nicknameInput {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 0.3rem;
+    margin-bottom: 0.8rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.nicknameInput:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nicknameInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.playButton {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    background: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.playButton:hover {
+    background: #3d8b40;
+}
+
+.controlsSection {
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.8rem;
+    margin: 0 -0.5rem;
+}
+
+.controlsSection h2 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.controlsGrid {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.controlItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+    gap: 1rem;
+}
+
+.key {
+    display: flex;
+    gap: 0.15rem;
+    align-items: center;
+}
+
+.keystroke {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.15rem 0.3rem;
+    border-radius: 0.2rem;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #4CAF50;
+    min-width: 8px;
+    height: 16px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.or {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+    margin: 0 0.2rem;
+    display: inline-flex;
+    align-items: center;
 }
